@@ -37,7 +37,7 @@ jobs:
         uses: OctopusDeploy/push-package-action@v4
         env:
           OCTOPUS_URL: ${{ secrets.OCTOPUS_SERVER }}
-          OCTOPUS_API_KEY: ${{ secrets.API_KEY }}
+          OCTOPUS_API_KEY: ${{ secrets.OCTOPUS_API_KEY }}
           OCTOPUS_SPACE: Default
         with:
           packages: |
