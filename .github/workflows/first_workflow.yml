@@ -1,0 +1,22 @@
+    name: Build an empty package
+    on:
+    push:
+        branches:
+            - main
+        workflow_dispatch:
+
+    steps:
+    - uses: actions/checkout@v3
+                              
+  # create a Zip package from files in the "reports" folder; create package in "packaging" folder
+     -name: Create a Zip package 🐙
+    id: create_a_zip_package
+    uses: OctopusDeploy/create-zip-package-action@v4
+    with:
+      package_id: 'DemoPackage'
+      version: '1.0.0'
+      output_folder: './packaging'
+      base_path: reports
+      files: |
+        **/*.*
+                
