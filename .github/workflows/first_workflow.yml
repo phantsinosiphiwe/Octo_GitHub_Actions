@@ -36,10 +36,10 @@ jobs:
         id: push_a_package_to_octopus_deploy
         uses: OctopusDeploy/push-package-action@v4
         env:
-            OCTOPUS_URL: ${{ https://myocto.octopus.app }}
-            OCTOPUS_API_KEY: ${{ secrets.API_KEY }}
-            OCTOPUS_SPACE: 'Default'
+          OCTOPUS_URL: https://myocto.octopus.app
+          OCTOPUS_API_KEY: ${{ secrets.API_KEY }}
+          OCTOPUS_SPACE: Default
         with:
-            packages: |
-             ./packaging/**/*.zip
+          packages: |
+            ./packaging/**/*.zip
                     
